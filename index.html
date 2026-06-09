@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kafe Menü Çarkı · Rastgele Tatlı & İçecek</title>
+    <meta
+      name="description"
+      content="Türkiye'deki kafelerde bulunan tatlı ve içecekleri 3B animasyonlu modellerle rastgele eşleştiren menü seçme uygulaması."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+
+    <main class="app">
+      <header class="hero">
+        <h1 class="title">Kafe Menü Çarkı</h1>
+        <p class="subtitle">
+          Başla'ya bas, sana bir <b>tatlı</b> ve bir <b>içecek</b> seçelim 🍰☕
+        </p>
+      </header>
+
+      <section id="result" class="result" aria-live="polite">
+        <article class="card" id="dessertCard">
+          <span class="card-tag">Tatlı</span>
+          <div class="canvas-wrap">
+            <canvas id="dessertCanvas"></canvas>
+          </div>
+          <h2 class="card-name" id="dessertName">—</h2>
+        </article>
+
+        <article class="card" id="drinkCard">
+          <span class="card-tag">İçecek</span>
+          <div class="canvas-wrap">
+            <canvas id="drinkCanvas"></canvas>
+          </div>
+          <h2 class="card-name" id="drinkName">—</h2>
+        </article>
+      </section>
+
+      <button id="startBtn" class="start-btn">Başla 🎯</button>
+
+      <p id="emptyState" class="empty-state">
+        Henüz seçim yapılmadı. Yukarıdaki <b>Başla</b> tuşuna basarak ilk
+        kombinasyonunu çek!
+      </p>
+
+      <section class="history">
+        <h3 class="history-title">Tüm Ürünler · Çekilenler</h3>
+        <div class="history-grid">
+          <div class="history-col">
+            <div class="col-head">
+              <span>🍰 Tatlılar</span>
+              <span class="badge" id="dessertCount">0</span>
+            </div>
+            <ul class="chips" id="dessertHistory"></ul>
+          </div>
+          <div class="history-col">
+            <div class="col-head">
+              <span>☕ İçecekler</span>
+              <span class="badge" id="drinkCount">0</span>
+            </div>
+            <ul class="chips" id="drinkHistory"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
